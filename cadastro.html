@@ -10,18 +10,39 @@
     <header>
        <nav>
         <div class= "logo">&#129309; Voluntários</div>
-         <button class="menu-toggle" onclick="toggleMenu()"></button>
+        <img src="imagens/" alt="">
             <ul id="navMenu">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="cadastro.html" class="active">Cadastro</a></li>
+                <li><a href="cadastro.html" >Cadastro</a></li>
                 <li><a href="projetos.html">Projetos</a></li>  
             </ul>
        </nav>
     </header>
-
+      
 
     <section>
+        <h2>Formulário de Cadastro de Voluntários</h2>
+        <form action="#" method="post">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required>
 
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+
+            <label for="interesses">Áreas de Interesse:</label>
+            <select id="interesses" name="interesses" required>
+                <option value="">Selecione</option>
+                <option value="educacao">Educação</option>
+                <option value="saude">Saúde</option>
+                <option value="meio-ambiente">Meio Ambiente</option>
+                <option value="cultura">Cultura</option>
+            </select>
+
+            <button type="submit">Enviar</button>
+        </form>
     </section>
 </body>
 </html>
