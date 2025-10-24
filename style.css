@@ -1,0 +1,153 @@
+/* ====== ESTILO GERAL ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f9fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ====== CABEÇALHO ====== */
+header {
+    background-color: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header img {
+    width: 120px;
+    height: auto;
+    margin-top: 10px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+/* ====== MENU DE NAVEGAÇÃO ====== */
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    gap: 15px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #00509e;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+header ul li a:hover {
+    background-color: #0073e6;
+}
+
+/* ====== CONTEÚDO PRINCIPAL ====== */
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+main h2 {
+    color: #003366;
+    border-bottom: 3px solid #00509e;
+    display: inline-block;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+main p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+main img {
+    display: block;
+    margin: 20px auto;
+    max-width: 250px;
+    border-radius: 8px;
+}
+
+/* ====== LISTAS E VALORES ====== */
+section ul {
+    margin: 15px 0 20px 40px;
+}
+
+section ul li {
+    margin-bottom: 8px;
+}
+
+/* ====== CONTATO ====== */
+address {
+    background-color: #eaf2fb;
+    padding: 20px;
+    border-left: 5px solid #00509e;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+address h2 {
+    margin-bottom: 10px;
+    color: #003366;
+}
+
+address p {
+    margin-bottom: 8px;
+}
+
+/* ====== RODAPÉ ====== */
+footer {
+    background-color: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #66b2ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ====== RESPONSIVIDADE ====== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.4rem;
+        padding: 0 10px;
+    }
+
+    header ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    main {
+        padding: 0 15px;
+    }
+
+    main img {
+        max-width: 200px;
+    }
+}
+
