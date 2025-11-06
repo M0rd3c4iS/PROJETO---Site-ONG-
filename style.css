@@ -1,4 +1,6 @@
-/* ====== ESTILO GERAL ====== */
+/* ============================================================
+   ESTILO GERAL
+============================================================ */
 * {
     margin: 0;
     padding: 0;
@@ -7,12 +9,14 @@
 }
 
 body {
-    background-color: #089e005f;
+    background-color: #ffffff;
     color: #333;
     line-height: 1.6;
 }
 
-/* ====== CABEÇALHO ====== */
+/* ============================================================
+   CABEÇALHO
+============================================================ */
 header {
     background-color: #0071e2;
     color: #fff;
@@ -23,9 +27,9 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
-/* --- Barra superior com logo e título --- */
 .header-top {
     display: flex;
     align-items: center;
@@ -46,7 +50,7 @@ header h1 {
     flex: 1;
 }
 
-/* ====== MENU DE NAVEGAÇÃO ====== */
+/* MENU DE NAVEGAÇÃO */
 header ul {
     list-style: none;
     display: flex;
@@ -65,11 +69,14 @@ header ul li a {
     transition: all 0.3s ease;
 }
 
-header ul li a:hover {
+header ul li a:hover,
+header ul li a.active {
     background-color: #0073e6;
 }
 
-/* ====== CONTEÚDO PRINCIPAL ====== */
+/* ============================================================
+   CONTEÚDO PRINCIPAL
+============================================================ */
 main {
     max-width: 1000px;
     margin: 40px auto;
@@ -77,7 +84,7 @@ main {
 }
 
 main h2 {
-    color: #0E6141;
+    color: #02472d;
     border-bottom: 3px solid #00509e;
     display: inline-block;
     margin-bottom: 15px;
@@ -89,7 +96,9 @@ main p {
     text-align: justify;
 }
 
-/* ====== IMAGENS PRINCIPAIS ====== */
+/* ============================================================
+   IMAGENS
+============================================================ */
 main img {
     max-width: 300px;
     height: auto;
@@ -98,7 +107,9 @@ main img {
     border-radius: 10px;
 }
 
-/* ====== SEÇÃO "Quem somos nós" ====== */
+/* ============================================================
+   SEÇÃO: QUEM SOMOS
+============================================================ */
 .quemsomos-section {
     background-color: #f5f9ff;
     padding: 20px;
@@ -111,7 +122,9 @@ main img {
     color: #003366;
 }
 
-/* ====== SEÇÃO "NOSSA MISSÃO" ====== */
+/* ============================================================
+   SEÇÃO: MISSÃO
+============================================================ */
 .missao-section {
     background-color: #0069d1;
     display: flex;
@@ -121,6 +134,7 @@ main img {
     flex-wrap: wrap;
     margin-top: 40px;
     border-radius: 5px;
+    color: #fff;
 }
 
 .missao-section img {
@@ -132,11 +146,12 @@ main img {
 .missao-section .texto {
     flex: 1;
     min-width: 250px;
-    color: #fff;
     padding: 20px;
 }
 
-/* ====== LISTAS E VALORES ====== */
+/* ============================================================
+   SEÇÃO: VALORES
+============================================================ */
 section ul {
     background-color: #0069d1;
     margin: 15px 0 20px 40px;
@@ -153,7 +168,9 @@ section ul p {
     text-align : right;
 }
 
-/* ====== CONTATO ====== */
+/* ============================================================
+   CONTATO
+============================================================ */
 address {
     background-color: #eaf2fb;
     padding: 20px;
@@ -171,7 +188,9 @@ address p {
     margin-bottom: 8px;
 }
 
-/* ====== RODAPÉ ====== */
+/* ============================================================
+   RODAPÉ
+============================================================ */
 footer {
     background-color: #003366;
     color: #fff;
@@ -195,7 +214,144 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* ====== RESPONSIVIDADE ====== */
+/* ============================================================
+   FORMULÁRIO DE CADASTRO
+============================================================ */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+form {
+    background-color: #f5f9ff;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 40px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+form h2, h3 {
+    text-align: center;
+    color: #003366;
+    margin-bottom: 25px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #003366;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccd6e0;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #00509e;
+    box-shadow: 0 0 5px rgba(0, 80, 158, 0.3);
+    outline: none;
+}
+
+form button {
+    background-color: #00509e;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background-color: #003f7d;
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   PÁGINA DE PROJETOS
+============================================================ */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Menu */
+#navMenu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+#navMenu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+#navMenu li a:hover,
+#navMenu li a.active {
+  color: #ffd700;
+}
+
+/* Cards de projetos */
+.projetos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.projeto {
+  background-color: #e9f4f8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projeto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.projeto h3 {
+  color: #0a4d68;
+  margin-bottom: 0.5rem;
+}
+
+.projeto p {
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   RESPONSIVIDADE
+============================================================ */
 @media (max-width: 768px) {
     .header-top {
         flex-direction: column;
@@ -226,102 +382,7 @@ footer a:hover {
         width: 70%;
         max-width: 250px;
     }
-}
 
-
-
-
-/* =========== Cadastro de Voluntários =========== */
-
-/* ====== ESTILOS DO FORMULÁRIO ====== */
-div.form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-
-h3 {
-    text-align: center;
-    color: #00509e;
-    margin-bottom: 15px;
-}
-
-
-form {
-    background-color: #f5f9ff;
-    padding: 30px;
-    border-radius: 10px;
-    margin: 40px auto;
-    max-width: 600px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    font-family: "Poppins", Arial, sans-serif;
-}
-
-/* ====== LABELS ====== */
-form label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-    color: #003366;
-}
-
-/* ====== CAMPOS DE ENTRADA ====== */
-
-h2 {
-    text-align: center;
-    color: #003366;
-    margin-bottom: 25px;
-}
-
-form input,
-form select,
-form textarea {
-    width: 100%;
-    padding: 10px 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccd6e0;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background-color: #fff;
-}
-
-/* ====== INTERAÇÃO ====== */
-form input:focus,
-form select:focus,
-form textarea:focus {
-    border-color: #00509e;
-    box-shadow: 0 0 5px rgba(0, 80, 158, 0.3);
-    outline: none;
-}
-
-/* ====== BOTÃO ====== */
-form button {
-    background-color: #00509e;
-    color: #fff;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-form button:hover {
-    background-color: #003f7d;
-    transform: translateY(-2px);
-}
-
-/* ====== ESTILO DO PLACEHOLDER ====== */
-form input::placeholder,
-form textarea::placeholder {
-    color: #888;
-}
-
-/* ====== RESPONSIVIDADE ====== */
-@media (max-width: 768px) {
     form {
         padding: 20px;
         width: 90%;
@@ -330,5 +391,29 @@ form textarea::placeholder {
     form button {
         width: 100%;
     }
-}
 
+    #navMenu {
+        display: none;
+        flex-direction: column;
+        background-color: #0a4d68;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+        border-radius: 0 0 0 10px;
+    }
+
+    #navMenu.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+}
