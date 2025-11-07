@@ -105,6 +105,7 @@ main img {
     display: block;
     margin: 20px auto;
     border-radius: 10px;
+   
 }
 
 /* ============================================================
@@ -283,6 +284,97 @@ form button:hover {
     background-color: #003f7d;
     transform: translateY(-2px);
 }
+
+/* ===================== ESTILOS JS (feedback visual) ===================== */
+.error-msg {
+    color: #d9534f;
+    font-size: 0.85rem;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.input-error {
+    border: 2px solid #d9534f !important;
+    background-color: #ffeaea;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* ===================== POPUP DE SUCESSO ===================== */
+.popup-success {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 9999;
+}
+
+.popup-success.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.popup-success.show .popup-content {
+    transform: scale(1);
+}
+
+.popup-content h2 {
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.popup-content p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.popup-content button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+    background-color: #218838;
+}
+
+
 
 /* ============================================================
    PÁGINA DE PROJETOS
