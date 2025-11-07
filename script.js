@@ -194,3 +194,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+/* ===================== ABA DE PROJETOS ===================== */
+document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Remove estado ativo anterior
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+
+            // Ativa nova aba
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.tab).classList.add('active');
+
+            // Scroll suave até o topo da seção
+            window.scrollTo({
+                top: document.querySelector('.projetos-page').offsetTop - 50,
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+
