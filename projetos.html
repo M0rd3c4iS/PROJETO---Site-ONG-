@@ -1,91 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nossos Projetos</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossos Projetos | Instituto IMMEL</title>
+  <link rel="stylesheet" href="CSS\style.css">
+  <script defer src="JS\script.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">&#128203; Projetos</div>
-            <ul id="navMenu">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
-                <li><a href="projetos.html" class="active">Projetos</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main class="projetos-page">
-        <h2>Nossos Projetos</h2>
-        <p>Conheça as nossas principais iniciativas em andamento:</p>
+  <header role="banner">
+    <nav aria-label="Menu principal">
+      <div class="logo" aria-label="Logo do Instituto IMMEL">&#128203; Projetos</div>
+      <ul id="navMenu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+        <li><a href="projetos.html" aria-current="page" class="active">Projetos</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <!-- Abas -->
-        <div class="tabs">
-            <button class="tab-button active" data-tab="habitacao">🏠 Habitação</button>
-            <button class="tab-button" data-tab="consultoria">🎓 Consultoria e Capacitação</button>
-            <button class="tab-button" data-tab="renda">💼 Geração de Trabalho e Renda</button>
+  <main id="conteudoPrincipal" role="main" class="projetos-page">
+    <h1>Nossos Projetos</h1>
+    <p>Conheça as nossas principais iniciativas em andamento.</p>
+
+    <!-- Abas acessíveis -->
+    <div class="tabs" role="tablist" aria-label="Categorias de Projetos">
+      <button class="tab-button active" id="tab-habitacao" role="tab" aria-controls="painel-habitacao" aria-selected="true">
+        🏠 Habitação
+      </button>
+      <button class="tab-button" id="tab-consultoria" role="tab" aria-controls="painel-consultoria" aria-selected="false">
+        🎓 Consultoria e Capacitação
+      </button>
+      <button class="tab-button" id="tab-renda" role="tab" aria-controls="painel-renda" aria-selected="false">
+        💼 Geração de Trabalho e Renda
+      </button>
+    </div>
+
+    <!-- Painéis das abas -->
+    <section class="tab-content active" id="painel-habitacao" role="tabpanel" aria-labelledby="tab-habitacao">
+      <div class="banner">
+        <img src="imagens/habitacao.webp" alt="Banner do projeto de habitação">
+        <div class="banner-text">
+          <h2>Projeto Habitação</h2>
+          <p>Construindo lares dignos e sustentáveis para famílias em vulnerabilidade.</p>
         </div>
+      </div>
 
-        <!-- Conteúdos das Abas -->
-        <div class="tab-content active" id="habitacao">
-            <div class="banner">
-                <img src="imagens/habitacao.webp" alt="Projeto Habitação Banner">
-                <div class="banner-text">
-                    <h3>Construindo lares</h3>
-                    <p>Construindo lares dignos e sustentáveis para famílias em vulnerabilidade.</p>
-                </div>
-            </div>
+      <div class="galeria" role="group" aria-label="Galeria de imagens do projeto Habitação">
+        <img src="imagens/hab1.webp" alt="Equipe entregando chaves para família beneficiada">
+        <img src="imagens/hab2.webp" alt="Mulher beneficiada sorrindo em frente à sua nova casa">
+        <img src="imagens/hab3.webp" alt="Mulher beneficiada sorrindo em frente à sua nova casa">
+        <img src="imagens/hab4.webp" alt="Voluntários descarregando materiais de construção">
+        <img src="imagens/hab5.webp" alt="Mulher beneficiada com sua nova casa">
+        <img src="imagens/hab6.webp" alt="Senhor beneficiado em frente à sua nova casa">
+      </div>
+    </section>
 
-            <div class="galeria">
-                <img src="imagens/hab1.webp" alt="">
-                <img src="imagens/hab2.webp" alt="">
-                <img src="imagens/hab3.webp" alt="">
-                <img src="imagens/hab4.webp" alt="">
-                <img src="imagens/hab5.webp" alt="">
-                <img src="imagens/hab6.webp" alt="">
-            </div>
+    <section class="tab-content" id="painel-consultoria" role="tabpanel" aria-labelledby="tab-consultoria" hidden>
+      <div class="banner">
+        <img src="imagens/consultoria-capacitacao.png" alt="Banner do projeto de Consultoria e Capacitação">
+        <div class="banner-text">
+          <h2>Consultoria e Capacitação</h2>
+          <p>Desenvolvendo habilidades e fortalecendo comunidades com conhecimento e orientação técnica.</p>
         </div>
+      </div>
 
-        <div class="tab-content" id="consultoria">
-            <div class="banner">
-                <img src="imagens/consultoria-capacitacao.png" alt="Consultoria e Capacitação Banner">
-                <div class="banner-text">
-                    <h3>Consultoria e Capacitação</h3>
-                    <p>Desenvolvendo habilidades e fortalecendo comunidades com conhecimento.</p>
-                </div>
-            </div>
+      <div class="galeria" role="group" aria-label="Galeria de imagens de Consultoria e Capacitação">
+        <img src="imagens/cons1.webp" alt="Mulheres participando de uma oficina de capacitação">
+        <img src="imagens/cons2.webp" alt="mulher exibindo certificado de conclusão de curso">
+        <img src="imagens/cons3.webp" alt="Mulheres em uma sessão de treinamento prático">
+      </div>
+    </section>
 
-            <div class="galeria">
-                <img src="imagens/cons1.webp" alt="">
-                <img src="imagens/cons2.webp" alt="">
-                <img src="imagens/cons3.webp" alt="">
-            
-            </div>
+    <section class="tab-content" id="painel-renda" role="tabpanel" aria-labelledby="tab-renda" hidden>
+      <div class="banner">
+        <img src="imagens/geracao-renda.webp" alt="Banner do projeto de Geração de Renda">
+        <div class="banner-text">
+          <h2>Geração de Trabalho e Renda</h2>
+          <p>Empoderando pessoas com oportunidades de trabalho e empreendedorismo social.</p>
         </div>
+      </div>
 
-        <div class="tab-content" id="renda">
-            <div class="banner">
-                <img src="imagens/geracao-renda.webp" alt="Geração de Trabalho e Renda Banner">
-                <div class="banner-text">
-                    <h3>Geração de Trabalho e Renda</h3>
-                    <p>Empoderando pessoas com oportunidades de trabalho e empreendedorismo.</p>
-                </div>
-            </div>
+      <div class="galeria" role="group" aria-label="Galeria de imagens do projeto de Geração de Renda">
+        <img src="imagens/ger1.webp" alt="Equipe de construção reunida para foto">
+        <img src="imagens/ger2.webp" alt="Equipe de voluntarios reunida para foto">
+        <img src="imagens/ger3.webp" alt="Equipe de contrução em ação">
+      </div>
+    </section>
+  </main>
 
-            <div class="galeria">
-                <img src="imagens/ger1.webp" alt="">
-                <img src="imagens/ger2.webp" alt="">
-                <img src="imagens/ger3.webp" alt="">
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Voluntários Unidos — Todos os direitos reservados.</p>
-    </footer>
+  <footer role="contentinfo">
+    <p>&copy; 2025 Instituto IMMEL — Todos os direitos reservados.</p>
+    <p><a href="mailto:contato@immel.org">contato@immel.org</a></p>
+  </footer>
 </body>
 </html>

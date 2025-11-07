@@ -42,6 +42,9 @@ header {
 header img {
     width: 80px;
     height: auto;
+    position: relative;
+    top: -5px;
+    left: 200px;
 }
 
 header h1 {
@@ -166,7 +169,7 @@ section ul p {
     list-style-type: disc;
     margin-left: 20px;
     margin-bottom: 8px;
-    text-align : right;
+    text-align : justify;
 }
 
 /* ============================================================
@@ -194,72 +197,118 @@ address p {
 /* ============================================================
    FORMULÁRIO DE CADASTRO
 ============================================================ */
-.form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+/* =========== LINKS DE ACESSIBILIDADE =========== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: #005bb5;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  z-index: 100;
+  text-decoration: none;
+  transition: top 0.3s;
+}
+.skip-link:focus {
+  top: 10px;
 }
 
-form {
-    background-color: #f5f9ff;
-    padding: 30px;
-    border-radius: 10px;
-    margin: 40px auto;
-    max-width: 600px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+/* =========== FORMULÁRIO =========== */
+.cadastro-section {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #f9fafc;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-form h2, h3 {
-    text-align: center;
-    color: #003366;
-    margin-bottom: 25px;
+.cadastro-section h1 {
+  color: #003366;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
-form label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-    color: #003366;
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #333;
 }
 
-form input,
-form select,
-form textarea {
-    width: 100%;
-    padding: 10px 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccd6e0;
-    border-radius: 6px;
-    font-size: 1rem;
-    background-color: #fff;
-    transition: all 0.3s ease;
+form fieldset {
+  border: 2px solid #00509e;
+  border-radius: 6px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
-form input:focus,
-form select:focus,
-form textarea:focus {
-    border-color: #00509e;
-    box-shadow: 0 0 5px rgba(0, 80, 158, 0.3);
-    outline: none;
+form legend {
+  font-weight: bold;
+  color: #004080;
+  padding: 0 0.5rem;
 }
 
-form button {
-    background-color: #00509e;
-    color: #fff;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #002b80;
 }
 
-form button:hover {
-    background-color: #003f7d;
-    transform: translateY(-2px);
+input,
+select {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin-top: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
 }
+
+input:focus,
+select:focus {
+  outline: 3px solid #ffbf00;
+  outline-offset: 2px;
+  border-color: #005bb5;
+}
+
+/* Botão */
+button {
+  background: #00509e;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 0.8rem 1.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+button:focus {
+  background: #003f7d;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* Mensagens SR-only (leitores de tela) */
+.sr-only {
+  position: absolute;
+  left: -9999px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .cadastro-section {
+    width: 90%;
+    padding: 1.5rem;
+  }
+}
+
 
 /* ===================== ESTILOS JS (feedback visual) ===================== */
 .error-msg {
@@ -477,6 +526,101 @@ form button:hover {
         height: 160px;
     }
 }
+
+/* ===== Acessibilidade ===== */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: #ffd700;
+  color: #000;
+  padding: 8px 14px;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: top 0.3s;
+  z-index: 100;
+}
+.skip-link:focus {
+  top: 10px;
+}
+
+/* Abas */
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+.tab-button {
+  background: #2799c6;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+.tab-button:hover,
+.tab-button:focus {
+  background: #097ca3;
+  outline: 3px solid #ffd700;
+  outline-offset: 2px;
+}
+.tab-button.active {
+  background: #ffd700;
+  color: #000;
+}
+
+/* Painéis */
+.tab-content {
+  display: none;
+  margin-bottom: 2rem;
+}
+.tab-content.active {
+  display: block;
+}
+
+/* Galeria */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.galeria img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.galeria img:hover,
+.galeria img:focus {
+  transform: scale(1.05);
+}
+
+/* Banner */
+.banner {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.banner img {
+  width: 100%;
+  border-radius: 10px;
+}
+.banner-text {
+ 
+  bottom: 20px;
+  left: 30px;
+  background: rgba(24, 117, 154, 0.85);
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 6px;
+}
+.banner-text h2 {
+  margin-bottom: 0.5rem;
+}
+
 
 /* ============================================================
    RODAPÉ

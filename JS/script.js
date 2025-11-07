@@ -195,27 +195,84 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/* ===================== ABA DE PROJETOS ===================== */
-document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.tab-button');
-    const contents = document.querySelectorAll('.tab-content');
+// Máscaras de entrada acessíveis
+document.addEventListener("DOMContentLoaded", () => {
+  const cpf = document.getElementById("cpf");
+  const telefone = document.getElementById("telefone");
+  const cep = document.getElementById("cep");
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            // Remove estado ativo anterior
-            tabs.forEach(t => t.classList.remove('active'));
-            contents.forEach(c => c.classList.remove('active'));
-
-            // Ativa nova aba
-            tab.classList.add('active');
-            document.getElementById(tab.dataset.tab).classList.add('active');
-
-            // Scroll suave até o topo da seção
-            window.scrollTo({
-                top: document.querySelector('.projetos-page').offsetTop - 50,
-                behavior: 'smooth'
-            });
-        });
+  const aplicarMascara = (campo, mascara) => {
+    campo.addEventListener("input", () => {
+      let valor = campo.value.replace(/\D/g, "");
+      let i = 0;
+      campo.value = mascara.replace(/#/g, () => valor[i++] || "");
     });
+  };
+
+  aplicarMascara(cpf, "###.###.###-##");
+  aplicarMascara(telefone, "(##) #####-####");
+  aplicarMascara(cep, "#####-###");
+
+  // Validação acessível
+  const form = document.getElementById("formCadastro");
+  form.addEventListener("submit", (e) => {
+    const campos = form.querySelectorAll("input[required], select[required]");
+    let valido = true;
+
+    campos.forEach((campo) => {
+      if (!campo.value.trim()) {
+        valido = false;
+        campo.setAttribute("aria-invalid", "true");
+        campo.focus();
+      } else {
+        campo.removeAttribute("aria-invalid");
+      }
+    });
+
+    if (!valido) {
+      e.preventDefault();
+      alert("Por favor, preencha todos os campos obrigatórios corretamente.");
+    }
+  });
+});
+
+/* ===================== ABA DE PROJETOS ===================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const tabs = document.querySelectorAll(".tab-button");
+  const panels = document.querySelectorAll(".tab-content");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      // Atualiza estado das abas
+      tabs.forEach((t) => {
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
+      });
+      tab.classList.add("active");
+      tab.setAttribute("aria-selected", "true");
+
+      // Atualiza os painéis
+      panels.forEach((panel) => {
+        panel.hidden = true;
+        panel.classList.remove("active");
+      });
+      const activePanel = document.getElementById(tab.getAttribute("aria-controls"));
+      activePanel.hidden = false;
+      activePanel.classList.add("active");
+      activePanel.focus();
+    });
+
+    // Suporte para teclado (Setas)
+    tab.addEventListener("keydown", (e) => {
+      const currentIndex = Array.from(tabs).indexOf(tab);
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        tabs[(currentIndex + 1) % tabs.length].focus();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        tabs[(currentIndex - 1 + tabs.length) % tabs.length].focus();
+      }
+    });
+  });
 });
 

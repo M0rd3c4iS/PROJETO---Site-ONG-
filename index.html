@@ -4,16 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IMMEL - Instituto para um Mundo Melhor</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="CSS\style.css">
+  <script defer src="JS\script.js"></script>
 </head>
 <body>
-  <header>
+  <!-- Link de salto para acessibilidade -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <header role="banner">
     <div class="header-container">
-      <img src="imagens/logo.png" alt="Logo do IMMEL" class="logo">
-      <h1>IMMEL - Instituto para um Mundo Melhor</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Início</a></li>
+      <img src="imagens/logo.png" alt="Logo do Instituto IMMEL" class="logo" width="100" height="100">
+      <h1 id="titulo-site">IMMEL - Instituto para um Mundo Melhor</h1>
+
+      <nav aria-label="Menu principal">
+        <ul class="menu-principal">
+          <li><a href="index.html" aria-current="page">Início</a></li>
           <li><a href="cadastro.html">Cadastro</a></li>
           <li><a href="projetos.html">Projetos</a></li>
         </ul>
@@ -21,27 +26,34 @@
     </div>
   </header>
 
-  <main>
+  <main id="conteudo-principal" tabindex="-1">
     <!-- Seção Quem Somos -->
-    <section class="quemsomos-section fade">
+    <section class="quemsomos-section fade" aria-labelledby="quem-somos-titulo">
       <div class="texto">
-        <h2>Quem Somos</h2>
-        <p>O IMMEL é uma instituição de direito privado, sob a forma de associação sem fins lucrativos, fundada em 04 de julho de 2003. O IMMEL se propõe a ser um agente catalisador de ações sociais concretas, geradoras de mudanças, visando o desenvolvimento humano no aspecto educacional, cultural, artístico, desportivo, social e econômico das comunidades brasileiras.</p>
+        <h2 id="quem-somos-titulo">Quem Somos</h2>
+        <p>
+          O IMMEL é uma instituição de direito privado, sob a forma de associação sem fins lucrativos, fundada em 04 de julho de 2003. 
+          O IMMEL se propõe a ser um agente catalisador de ações sociais concretas, geradoras de mudanças, 
+          visando o desenvolvimento humano nos aspectos educacional, cultural, artístico, desportivo, social e econômico das comunidades brasileiras.
+        </p>
       </div>
     </section>
 
     <!-- Seção Missão -->
-    <section class="missao-section fade">
+    <section class="missao-section fade" aria-labelledby="missao-titulo">
       <div class="texto">
-        <h2>Nossa Missão</h2>
-        <p>Construir valor gerando prosperidade para associados e parceiros através do Desenvolvimento Humano e Comunitário.</p>
+        <h2 id="missao-titulo">Nossa Missão</h2>
+        <p>Construir valor e gerar prosperidade para associados e parceiros através do Desenvolvimento Humano e Comunitário.</p>
       </div>
-      <img src="imagens/imgMissao.webp" alt="Imagem ilustrando nossa missão">
+      <figure>
+        <img src="imagens/imgMissao.webp" alt="Duas pessoas colaborando em um projeto social" width="500" height="300">
+        <figcaption>Ilustração representando o trabalho colaborativo do IMMEL.</figcaption>
+      </figure>
     </section>
 
     <!-- Seção Valores -->
-    <section class="valores-section fade">
-      <h2>Nossos Valores</h2>
+    <section class="valores-section fade" aria-labelledby="valores-titulo">
+      <h2 id="valores-titulo">Nossos Valores</h2>
       <ul class="valores-lista">
         <li>Ética</li>
         <li>Transparência</li>
@@ -52,22 +64,20 @@
     </section>
 
     <!-- Seção Contato -->
-    <section class="contato-section fade">
-      <h2>Contato</h2>
+    <section class="contato-section fade" aria-labelledby="contato-titulo">
+      <h2 id="contato-titulo">Contato</h2>
       <address>
         <p>Email: <a href="mailto:immel@institutoimmel.org">immel@institutoimmel.org</a></p>
         <p>Telefone: <a href="tel:+557133515544">+55 (71) 3351-5544</a></p>
-        <p>Endereço: Rua Portugal, Nº 5, Ed. Status, Sala 910, Comércio, Salvador, Bahia.</p>
+        <p>Endereço: Rua Portugal, Nº 5, Edifício Status, Sala 910, Comércio, Salvador - Bahia.</p>
       </address>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 IMMEL - Instituto para um Mundo Melhor. Todos os direitos reservados.</p>
+  <footer role="contentinfo">
+    <p>&copy; 2025 <strong>IMMEL - Instituto para um Mundo Melhor</strong>. Todos os direitos reservados.</p>
     <p>Contato: <a href="mailto:contato@immel.org">contato@immel.org</a></p>
-    <img src="imagens/imgRodape.webp" alt="Imagem decorativa do rodapé">
+    <img src="imagens/imgRodape.webp" alt="Imagem decorativa de rodapé representando união e solidariedade" width="400" height="120">
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
